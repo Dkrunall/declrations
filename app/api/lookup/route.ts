@@ -4,7 +4,7 @@ export async function GET(req: NextRequest) {
   const phone = req.nextUrl.searchParams.get("phone");
   if (!phone) return NextResponse.json({ found: false });
 
-  const webhookUrl = process.env.NEXT_PUBLIC_SHEETS_WEBHOOK_URL;
+  const webhookUrl = process.env.SHEETS_WEBHOOK_URL;
   if (!webhookUrl) return NextResponse.json({ found: false });
 
   try {

@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
-  const webhookUrl = process.env.NEXT_PUBLIC_SHEETS_WEBHOOK_URL;
+  const webhookUrl = process.env.SHEETS_WEBHOOK_URL;
   if (!webhookUrl) {
     return NextResponse.json(
       { success: false, error: "Webhook URL not configured" },
